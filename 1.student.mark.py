@@ -1,22 +1,43 @@
+students =[]
+studentsID =[]
+courses =[]
+coursesID =[]
+marks =[]
+
 def number_of_student():
     count = int(input("enter the number of student: "))
     if count <=0:
         print("we don't have any studnents!")
         return 0
     else:
-        return count       
-            
-def student_information():
-    print("enter the information of students: ")
-    id_student = input("id of students: ")
-    name_student = input(("name of students: "))
-    DOB_student = input(("DOB of students: "))
-    a = {"id of studnets:": id_student, "name of student": name_student, "DOB of student": DOB_student}
-    return a
+        return count 
 
-def list_student(Studentlist):
-    for a in Studentlist:
-        print(f"id_student is {a['id of student']},name_student is {a['name of student']}, DOB_student is {a['DOB of student']}")
+def students_information():
+    print("enter the students' information: ")
+    in4 = {
+        'sid': '',
+        'name': '',
+        'DOB': ''
+    }
+
+    print("enter the id student: ")
+    in4['sid'] =sid= input('sid:')
+    print("enter the student name: ")
+    in4['name']=input()
+    print ("enter the DOB of student: ")
+    in4['DOB']= input()
+    students.append(in4)
+    studentsID.append(sid)
+
+
+
+def students_list():
+    print("list of students: ")
+    for i in range(0,len(students)):
+        print("[",students[i]['sid'],"]")
+        print("[",students[i]['name'],"]")
+        print("[",students[i]['DOB'],"]")
+#------------------------------------------
 
 def number_of_course():
     count = int(input("enter the number of course: "))
@@ -25,44 +46,73 @@ def number_of_course():
         return 0
     else:
         return count 
-    
+
 def course_information():
-    print("enter the information of courses: ")
-    id_course = input("id of courses: ")
-    name_course = input(("name of courses: "))
-    b = {"id of course:": id_course, "name of course": name_course}
-    return b
+    print("enter the courses' information: ")
+    in4c = {
+        'cid': '',
+        'name':' '
+    }
+    print("enter the id course: ")
+    in4c['cid'] =cid = input('cid:')
+    print("enter the course name: ")
+    in4c['name']= input()
+    courses.append(in4c)
+    coursesID.append(cid)
 
-def list_course(Courselist):
-    for b in Courselist:
-        print(f"id_course is {b['id of course']},name_course is {b['name of course']}")
+def courses_list():
+    print("list of the courses: ") 
+    for i in range(0,len(courses)):
+        print("[",courses[i]['cid'],"] ")
+        print("[",courses[i]['name'],"]")   
+#------------------------------------
+
+def mark_information():
+    print("enter the mark :")
+    in4m ={
+        'cid' : '',
+        'sid' : '',
+        'value': '' 
+    }
+    print("enter the course id: ")
+    in4m['cid'] = a = input('cid')
+    if a in coursesID:
+        print("enter the student id: ")
+        in4m['sid']=b = input('sid')
+        if b in studentsID:
+            print("enter the value of mark:")
+            in4m['value']=value = float(input('value'))
+            if value < 0:
+                print("the mark can not be negative!")
+            else:
+                return -1
+        else:
+            return -1
+    else:
+        return -1
+    mark.append(in4m) 
+
+def mark_list():
+    print("list of the mark: ")
+    for i in range(0,len(students)):
+        print("[",marks[i]['cid'],"]")
+        print("[",marks[i]['sid'],"]")
+        print("[",marks[i]['value'],"]") 
 
 
-Studentlist =[]
-count = number_of_student()
-for i in range (0, count):
-    a = student_information()
-    Studentlist += [a]
+#display
+a=number_of_student()
+for i in range(a):
+     students_information()
+students_list()
+#----
+b=number_of_course()
+for i in range(b):
+    course_information()
+courses_list()
+#----
+mark_information()
+mark_list()
 
-Courselist =[]
-count = number_of_course()()
-for i in range (0, count):
-    b = student_course()
-    Courselist += [b]
-    
 
-print("all students: ")
-list_student(Studentlist)
-print("all courses: ")
-list_course(Courselist)
 
-name_student =str(input("Enter student name: "))
-id_student =str(input("Enter student id: "))
-DOB_student =str(input("Enter student DOB: "))
-mark =str(input("Enter python mark: "))
-
-print("list of student's mark: ")
-print("Student name : ",name_student )
-print("Student id : ",id_student)
-print("Student DOB : ",DOB_student )
-print("Student mark : ",mark )
