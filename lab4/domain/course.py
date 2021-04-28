@@ -8,10 +8,10 @@ class Course:
         self._cid=cid
         self._name=name
         self._credit=credit
-        Courses.append(self)
-        CoursesID.append(self_.cid)
-        Courses_credit.append(self._credit)
-        CoursesName.append(self._name)
+        courses.append(self)
+        coursesID.append(self_.cid)
+        courses_credit.append(self._credit)
+        coursesName.append(self._name)
         
     def get_cid(self):
         return self._cid

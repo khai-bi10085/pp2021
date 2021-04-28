@@ -2,15 +2,15 @@ students=[]
 studentID=[]
 student_Name=[]
 studentdob=[]
-class  Ssudent:
+class  Student:
     def __init__(self,sid,name,dob):
         self._sid=sid
         self._name=name
         self._dob=dob
         students.append(self) 
         studentID.append(self._sid)
-        studentName.append(self._name)
-        Studentdob.append(self._dob)
+        student_Name.append(self._name)
+        studentdob.append(self._dob)
         
     def get_id(self):
         return self._id
