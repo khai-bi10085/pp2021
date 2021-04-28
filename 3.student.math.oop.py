@@ -22,7 +22,7 @@ class Student:
         self._sid =sid
         self._name =name
         self._dob = dob
-        students.append(sefl)
+        students.append(self)
         studentsID.append(self._sid)
 
     def get_sid(self):
@@ -72,9 +72,8 @@ class Mark:
 class Main:
     #imformation fuction
     def number_of_student():
-        while true:
-            op.addstr("enter the number of student: ")
-            op.refresh()
+        op.addstr("enter the number of student: ")
+        op.refresh()
         count = int(op.getstr().decode())
         if count <= 0:
             print("we don't have any studnents!")
@@ -83,24 +82,24 @@ class Main:
             return count
 
     def students_information():
-       op.addnstr("enter the student id: ", n)
+       op.addstr("enter the student id: ")
        op.refresh()
        sid =op.getstr().decode()
 
-       op.addnstr("enter the name student: ", n)
+       op.addstr("enter the name student: ")
        op.refresh()
        name =op.getstr().decode()
 
-       op.addnstr("enter the student dob: ", n)
+       op.addstr("enter the student dob: ")
        op.refresh()
        dob =op.getstr().decode()
        
        Student(sid,name,dob)
 
     def number_of_course():
-        while true:
-            op.addstr("enter the number of course: ")
-            op.refresh()
+       
+        op.addstr("enter the number of course: ")
+        op.refresh()
         count = int(op.getstr().decode())
         if count <= 0:
             print("we don't have any courses!")
@@ -110,15 +109,15 @@ class Main:
  
 
     def course_information():
-       op.addnstr("enter the course id: ", n)
+       op.addnstr("enter the course id: ")
        op.refresh()
        cid =op.getstr().decode()
 
-       op.addnstr("enter the name course: ", n)
+       op.addnstr("enter the name course: ")
        op.refresh()
        name =op.getstr().decode()
 
-       op.addnstr("enter the course credit: ", n)
+       op.addnstr("enter the course credit: ")
        op.refresh()
        credit = float(op.getstr().decode())
        
@@ -155,21 +154,21 @@ class Main:
         op.addstr("list of student: ")
         op.refresh()
         for a in students:
-            op.addstr("student_id: %s    studnent_name:  %s     student_DOB:  %s \n" % (student.get_sid(), student.get_name(), student.get_dob()))
+            op.addstr("student_id: %s    studnent_name:  %s     student_DOB:  %s \n" % (a.get_sid(), a.get_name(), a.get_dob()))
             op.refresh()
     
     def courses_list():
         op.addstr("list of course: ")
         op.refresh()
         for b in courses:
-            op.addstr("course_id: %s    course_name:  %s     course_credit:  %s \n" % (course.get_cid(), course.get_name(), course.get_credit()))
+            op.addstr("course_id: %s    course_name:  %s     course_credit:  %s \n" % (b.get_cid(), b.get_name(), b.get_credit()))
             op.refresh()
 
     def marks_list():
         op.addstr("list of marks: ")
         op.refresh()
         for c in marks:
-            op.addstr("course_id_for_mark: %s    student_id_for_mark:  %s     mark:  %s \n" % (mark.get_cid(), mark.get_sid(), mark.get_value()))
+            op.addstr("course_id_for_mark: %s    student_id_for_mark:  %s     mark:  %s \n" % (c.get_cid(), c.get_sid(), c.get_value()))
             op.refresh()
     #---------------------------
 
