@@ -109,15 +109,15 @@ class Main:
  
 
     def course_information():
-       op.addnstr("enter the course id: ")
+       op.addstr("enter the course id: ")
        op.refresh()
        cid =op.getstr().decode()
 
-       op.addnstr("enter the name course: ")
+       op.addstr("enter the name course: ")
        op.refresh()
        name =op.getstr().decode()
 
-       op.addnstr("enter the course credit: ")
+       op.addstr("enter the course credit: ")
        op.refresh()
        credit = float(op.getstr().decode())
        

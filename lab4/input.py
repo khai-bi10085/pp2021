@@ -21,15 +21,15 @@ class input:
             return count
 
     def students_information():
-       op.addnstr("enter the student id: ", n)
+       op.addstr("enter the student id: ")
        op.refresh()
        sid =op.getstr().decode()
 
-       op.addnstr("enter the name student: ", n)
+       op.addstr("enter the name student: ")
        op.refresh()
        name =op.getstr().decode()
 
-       op.addnstr("enter the student dob: ", n)
+       op.addstr("enter the student dob: ")
        op.refresh()
        dob =op.getstr().decode()
        
@@ -48,15 +48,15 @@ class input:
  
 
     def course_information():
-       op.addnstr("enter the course id: ", n)
+       op.addstr("enter the course id: ")
        op.refresh()
        cid =op.getstr().decode()
 
-       op.addnstr("enter the name course: ", n)
+       op.addstr("enter the name course: ")
        op.refresh()
        name =op.getstr().decode()
 
-       op.addnstr("enter the course credit: ", n)
+       op.addstr("enter the course credit: ")
        op.refresh()
        credit = float(op.getstr().decode())
        
